@@ -7,48 +7,93 @@
     <style>
         body {
             font-family: 'Special Elite', monospace;
-            background-color: #1D1D1D;
-            color: white;
-            padding: 20px;
+            background: linear-gradient(120deg, #22272e 0%, #353B42 100%);
+            color: #eaeaea;
+            padding: 32px;
             margin: 0;
+            min-height: 100vh;
         }
 
         h2 {
-            color: white;
-            text-shadow: 2px 2px 1px #000;
-            font-size: 24px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
+            color: #ffd27f;
+            text-shadow: 0 2px 7px #14110b, 0 1px #000;
+            font-size: 28px;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            border-bottom: 2px solid #ffc87066;
+            padding-bottom: 9px;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
-            background-color: #5F686B;
-            border: 1px solid #504A49;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #282C34cc;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px #0008, 0 1.5px 6px #432d0f77;
         }
 
         th, td {
             text-align: left;
-            padding: 8px 12px;
-            border-bottom: 1px solid #504A49;
+            padding: 15px 22px;
+            border-bottom: 1.5px solid #39393977;
+            font-size: 17px;
+            transition: background 0.12s;
         }
 
         th {
-            background-color: #504A49;
-            color: #fff1d0;
-            text-shadow: 1px 1px #000;
+            background: linear-gradient(90deg, #3c2c15 80%, #453d21 100%);
+            color: #ffe3b7;
+            font-size: 18px;
+            letter-spacing: 1.2px;
+            text-shadow: 0 1.5px 5px #0d0c07;
+            border-bottom: 2px solid #ffc87055;
+            font-weight: 700;
+        }
+
+        tr {
+            background: rgba(38,40,47, 0.82);
+            transition: background 0.16s;
         }
 
         tr:nth-child(even) {
-            background-color: #333535;
+            background: rgba(51,53,55, 0.85);
         }
 
         tr:hover {
-            background-color: #969696;
+            background: #5d3e1dc7;
         }
+
+        td {
+            color: #f5e3bc;
+            font-size: 17px;
+            font-family: inherit;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            th, td {
+                padding: 13px 8vw;
+            }
+            tr {
+                margin-bottom: 18px;
+            }
+            th, td {
+                font-size: 18px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+        }
+
     </style>
 </head>
 <body>
