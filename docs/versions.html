@@ -3,115 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <title>📦 Current Script Versions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">-->
     <style>
-        body {
-            font-family: 'Special+Elite', monospace;
-            background: linear-gradient(120deg, #22272e 0%, #353B42 100%);
-            color: #eaeaea;
-            padding: 32px;
-            margin: 0;
-            min-height: 100vh;
+        /* ===== RDR2 / Western Theme ===== */
+        :root{
+            --bg-dark-1:#1f2328;
+            --bg-dark-2:#2b2f36;
+            --wood-1:#3a2816;
+            --wood-2:#46331c;
+            --parchment:#f3e3c3;
+            --parchment-ink:#3b2a1a;
+            --brass:#caa564;
+            --brass-deep:#9b7b3c;
+            --gold:#ffd27f;
+            --smoke:rgba(0,0,0,.35);
+            --smoke-2:rgba(0,0,0,.6);
         }
 
-        h2 {
-            color: #ffd27f;
-            text-shadow: 0 2px 7px #14110b, 0 1px #000;
-            font-size: 28px;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-            font-weight: 700;
-            border-bottom: 2px solid #ffc87066;
-            padding-bottom: 9px;
+        /* Page */
+        body{
+            font-family: 'Rye', cursive;
+            background:
+                    radial-gradient(1200px 700px at 20% 10%, rgba(255,214,150,.06), transparent 60%),
+                    radial-gradient(900px 600px at 85% 75%, rgba(255,214,150,.05), transparent 65%),
+                    linear-gradient(120deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 100%);
+            color:#e9e0d0;
+            padding:32px;
+            margin:0;
+            min-height:100vh;
         }
 
-        .links {
-            margin-bottom: 28px;
-            font-size: 18px;
-            line-height: 1.8;
+        /* Titre “planche gravée” */
+        h2{
+            color:var(--gold);
+            font-size:30px;
+            letter-spacing:.8px;
+            margin:0 0 14px 0;
+            text-shadow:
+                    0 1px 0 #000,
+                    0 2px 6px var(--smoke-2),
+                    0 0 22px rgba(255,210,127,.18);
+            padding:14px 18px;
+            background:
+                    linear-gradient(180deg, rgba(202,165,100,.06), rgba(202,165,100,.0) 60%),
+                    linear-gradient(90deg, var(--wood-1), var(--wood-2));
+            border:1.5px solid var(--brass-deep);
+            box-shadow:
+                    inset 0 0 0 1px rgba(255,235,180,.08),
+                    0 10px 28px var(--smoke),
+                    0 2px 0 0 #1a120a;
+            border-radius:12px;
         }
 
-        .links a {
-            color: #ffd27f;
-            text-decoration: none;
-            font-weight: 600;
+        /* Liens rapides -> badges laiton */
+        .links{
+            margin:16px 2px 28px;
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px 14px;
+            align-items:center;
+        }
+        .links a{
+            display:inline-block;
+            padding:10px 14px;
+            border:1.5px solid var(--brass-deep);
+            border-radius:10px;
+            background:
+                    linear-gradient(180deg, rgba(255,232,180,.15), rgba(255,232,180,.05)),
+                    radial-gradient(600px 120px at 50% 0%, rgba(255,210,127,.12), transparent 60%),
+                    linear-gradient(90deg, #49351d, #3c2b17);
+            color:#ffe9bd;
+            text-decoration:none;
+            font-weight:700;
+            letter-spacing:.4px;
+            box-shadow:
+                    inset 0 0 0 1px rgba(255,243,210,.08),
+                    0 8px 18px rgba(0,0,0,.35);
+            transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
+        }
+        .links a:hover{
+            transform:translateY(-1px);
+            box-shadow:
+                    inset 0 0 0 1px rgba(255,243,210,.12),
+                    0 12px 24px rgba(0,0,0,.45);
+            filter:saturate(1.1);
+        }
+        .links a:active{ transform:translateY(0); }
+
+        /* Table “parchemin clouté” */
+        table{
+            width:100%;
+            border-collapse:separate;
+            border-spacing:0;
+            background:
+                    linear-gradient(180deg, rgba(255,252,235,.9), rgba(255,243,210,.92)),
+                    repeating-linear-gradient(0deg, rgba(60,40,20,.05) 0 2px, transparent 2px 30px);
+            color:var(--parchment-ink);
+            border-radius:14px;
+            overflow:hidden;
+            border:2px solid var(--brass-deep);
+            box-shadow:
+                    0 18px 42px rgba(0,0,0,.45),
+                    0 2px 0 0 #1a120a,
+                    inset 0 0 0 1px rgba(255,235,200,.35);
         }
 
-        .links a:hover {
-            text-decoration: underline;
-            color: #ffeaac;
+        /* Entêtes “lattes bois + laiton” */
+        th{
+            background:
+                    linear-gradient(180deg, rgba(202,165,100,.18), rgba(202,165,100,.05) 70%),
+                    linear-gradient(90deg, #4b341b 0%, #3f2d18 100%);
+            color:#ffe3b7;
+            text-shadow:0 1px 0 #2a1c0e, 0 0 14px rgba(255,210,127,.25);
+            border-bottom:2px solid rgba(155,123,60,.65);
+            font-size:18px;
+            letter-spacing:1px;
+            padding:15px 22px;
+            position:relative;
+        }
+        th:first-child{ box-shadow:inset 6px 0 0 rgba(0,0,0,.08); }
+        th:last-child{ box-shadow:inset -6px 0 0 rgba(0,0,0,.08); }
+
+        /* Lignes */
+        tr{
+            background:transparent;
+            transition:background .14s ease, transform .14s ease;
+        }
+        tr:nth-child(even){
+            background:rgba(80,55,28,.045);
         }
 
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            background: #282C34cc;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 6px 24px #0008, 0 1.5px 6px #432d0f77;
+        /* Cellules parchemin */
+        td{
+            padding:15px 22px;
+            font-size:17px;
+            color:#2e2114;
+            border-bottom:1.5px dashed rgba(120,85,45,.35);
         }
 
-        th, td {
-            text-align: left;
-            padding: 15px 22px;
-            border-bottom: 1.5px solid #39393977;
-            font-size: 17px;
-            transition: background 0.12s;
+        /* Survol : lueur de lanterne + relief */
+        tbody tr:hover{
+            background:rgba(255,220,140,.22);
+            transform:translateZ(0); /* déclenche l’accélération GPU */
+            box-shadow:inset 0 0 0 9999px rgba(255,210,127,.06);
         }
+        tbody tr:last-child td{ border-bottom:none; }
 
-        th {
-            background: linear-gradient(90deg, #3c2c15 80%, #453d21 100%);
-            color: #ffe3b7;
-            font-size: 18px;
-            letter-spacing: 1.2px;
-            text-shadow: 0 1.5px 5px #0d0c07;
-            border-bottom: 2px solid #ffc87055;
-            font-weight: 700;
+        /* Petits ornements (clous d’angle) */
+        table::before, table::after{
+            content:"";
+            position:absolute;
+            width:12px; height:12px;
+            border-radius:50%;
+            background:radial-gradient(circle at 30% 30%, #fff6d0 0 20%, #c29b52 22% 60%, #7a5b28 62% 100%);
+            box-shadow:0 2px 4px rgba(0,0,0,.5);
         }
-
-        tr {
-            background: rgba(38,40,47, 0.82);
-            transition: background 0.16s;
+        table{ position:relative; }
+        table::before{ top:10px; left:10px; }
+        table::after{ top:10px; right:10px; }
+        tbody::before, tbody::after{
+            content:"";
+            position:absolute;
+            width:12px; height:12px; bottom:10px;
+            border-radius:50%;
+            background:radial-gradient(circle at 30% 30%, #fff6d0 0 20%, #c29b52 22% 60%, #7a5b28 62% 100%);
+            box-shadow:0 2px 4px rgba(0,0,0,.5);
         }
+        tbody::before{ left:10px; }
+        tbody::after{ right:10px; }
 
-        tr:nth-child(even) {
-            background: rgba(51,53,55, 0.85);
-        }
-
-        tr:hover {
-            background: #5d3e1dc7;
-        }
-
-        td {
-            color: #f5e3bc;
-            font-size: 17px;
-            font-family: inherit;
-        }
-
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        @media (max-width: 600px) {
-            table, thead, tbody, th, td, tr {
-                display: block;
-            }
-            th, td {
-                padding: 13px 8vw;
-            }
-            tr {
-                margin-bottom: 18px;
-            }
-            th, td {
-                font-size: 18px;
-            }
-            h2 {
-                font-size: 22px;
-            }
-            .links {
-                font-size: 16px;
-            }
+        /* Responsive */
+        @media (max-width: 720px){
+            h2{ font-size:22px; }
+            .links{ gap:8px; }
+            .links a{ font-size:15px; padding:9px 12px; }
+            table, thead, tbody, th, td, tr{ display:block; }
+            th, td{ padding:14px 7vw; font-size:18px; }
+            tr{ margin-bottom:16px; }
+            table::before, table::after, tbody::before, tbody::after{ display:none; }
         }
 
     </style>
